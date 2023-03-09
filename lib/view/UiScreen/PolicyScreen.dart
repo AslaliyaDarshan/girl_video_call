@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:girl_video_call/view/ConstantClass.dart';
+import 'package:girl_video_call/view/Constants/ConstantClass.dart';
 import 'package:girl_video_call/view/UiScreen/IntroScreen.dart';
 import 'package:page_transition/page_transition.dart';
 import 'package:sizer/sizer.dart';
@@ -112,7 +112,10 @@ Terms and Conditions written on this application shall manage your use of this a
                             animationDuration: const Duration(seconds: 3),
                             overlayBlur: 15,
                             snackPosition: SnackPosition.BOTTOM,
-                            icon: const Icon(Icons.add_alert),
+                            icon: Icon(
+                              Icons.add_alert,
+                              color: Colors.white.withOpacity(0.9),
+                            ),
                           );
                           setState(() {});
                         },

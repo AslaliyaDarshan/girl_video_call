@@ -1,8 +1,7 @@
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
-import 'package:girl_video_call/view/ConstantClass.dart';
+import 'package:girl_video_call/view/Constants/ConstantClass.dart';
 import 'package:girl_video_call/view/UiScreen/PolicyScreen.dart';
 import 'package:page_transition/page_transition.dart';
 import 'package:sizer/sizer.dart';
@@ -50,10 +49,10 @@ class _SplashScreenState extends State<SplashScreen> {
                   Navigator.push(
                     context,
                     PageTransition(
-                        duration: const Duration(milliseconds: 1300),
-                        curve: Curves.slowMiddle,
-                        type: PageTransitionType.fade,
+                        duration: const Duration(milliseconds: 1200),
+                        type: PageTransitionType.rotate,
                         alignment: Alignment.center,
+                        childCurrent: const SplashScreen(),
                         child: const PolicyScreen(),
                         inheritTheme: true,
                         ctx: context),

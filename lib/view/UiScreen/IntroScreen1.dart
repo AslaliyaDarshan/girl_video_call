@@ -1,18 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:girl_video_call/view/Constants/ConstantClass.dart';
 import 'package:girl_video_call/view/UiScreen/HelloScreen.dart';
-import 'package:girl_video_call/view/UiScreen/IntroScreen1.dart';
+import 'package:girl_video_call/view/UiScreen/IntroScreen2.dart';
 import 'package:page_transition/page_transition.dart';
 import 'package:sizer/sizer.dart';
 
-class IntroScreen extends StatefulWidget {
-  const IntroScreen({Key? key}) : super(key: key);
+class IntroScreen1 extends StatefulWidget {
+  const IntroScreen1({Key? key}) : super(key: key);
 
   @override
-  State<IntroScreen> createState() => _IntroScreenState();
+  State<IntroScreen1> createState() => _IntroScreen1State();
 }
 
-class _IntroScreenState extends State<IntroScreen> {
+class _IntroScreen1State extends State<IntroScreen1> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -26,14 +26,16 @@ class _IntroScreenState extends State<IntroScreen> {
             child: ClipRRect(
               borderRadius: BorderRadius.circular(20),
               child: Image.asset(
-                "assets/image/intro1.png",
+                "assets/image/intro2.png",
                 fit: BoxFit.fill,
               ),
             ),
           ),
           height(4.h),
           Constants.text(
-              "Find your preferences partners.", 23.sp, Colors.white),
+              "Easily start unique conversations and Find your best matches.",
+              23.sp,
+              Colors.white),
           height(8.h),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -45,7 +47,7 @@ class _IntroScreenState extends State<IntroScreen> {
                   PageTransition(
                       duration: const Duration(milliseconds: 1000),
                       type: PageTransitionType.rightToLeftJoined,
-                      childCurrent: const IntroScreen(),
+                      childCurrent: const IntroScreen1(),
                       child: const HelloScreen(),
                       inheritTheme: true,
                       ctx: context),
@@ -57,12 +59,12 @@ class _IntroScreenState extends State<IntroScreen> {
                   PageTransition(
                       duration: const Duration(milliseconds: 1000),
                       type: PageTransitionType.rightToLeftJoined,
-                      childCurrent: const IntroScreen(),
-                      child: const IntroScreen1(),
+                      childCurrent: const IntroScreen1(),
+                      child: const IntroScreen2(),
                       inheritTheme: true,
                       ctx: context),
                 );
-              }, "Next")
+              }, "Next"),
             ],
           ),
         ],

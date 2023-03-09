@@ -4,7 +4,7 @@ import 'package:simple_gradient_text/simple_gradient_text.dart';
 import 'package:sizer/sizer.dart';
 
 Color backgroundColor = const Color(0xFF1F0417);
-Color policyBackgroundColor = const Color(0xFF321a2b);
+Color policyBackgroundColor = const Color(0xFF45303f);
 LinearGradient gradientButton = const LinearGradient(
   begin: Alignment.centerLeft,
   end: Alignment.centerRight,
@@ -45,8 +45,44 @@ class Constants {
   ) {
     return Text(
       pStrText,
+      textAlign: TextAlign.center,
       style: TextStyle(
           fontSize: pDblFontSize, color: pClr, fontWeight: FontWeight.w500),
+    );
+  }
+
+  static skipButton(
+    void Function() onTap,
+    String pStrText, {
+    double? pDblHeight,
+    double? pDblWidth,
+    int? pIntClr,
+  }) {
+    return InkWell(
+      borderRadius: BorderRadius.circular(30),
+      onTap: onTap,
+      child: Container(
+        height: pDblHeight ?? 7.5.h,
+        width: pDblWidth ?? 45.w,
+        alignment: Alignment.center,
+        decoration: BoxDecoration(
+          gradient: gradientButton,
+          borderRadius: BorderRadius.circular(30),
+        ),
+        child: Container(
+          margin: const EdgeInsets.all(3),
+          alignment: Alignment.center,
+          decoration: BoxDecoration(
+            color: backgroundColor,
+            borderRadius: BorderRadius.circular(30),
+          ),
+          child: Constants.text(
+            pStrText,
+            21.sp,
+            Color(pIntClr ?? 0xFFae198a),
+          ),
+        ),
+      ),
     );
   }
 
@@ -61,6 +97,27 @@ class Constants {
         alignment: Alignment.center,
         height: 60,
         width: double.infinity,
+        decoration: BoxDecoration(
+          gradient: gradientButton,
+          borderRadius: BorderRadius.circular(30),
+        ),
+        child: Constants.text(
+          pStrText,
+          21.sp,
+          Colors.white,
+        ),
+      ),
+    );
+  }
+
+  static nextButton(void Function() onTap, String pStrText) {
+    return InkWell(
+      borderRadius: BorderRadius.circular(30),
+      onTap: onTap,
+      child: Container(
+        alignment: Alignment.center,
+        height: 7.5.h,
+        width: 45.w,
         decoration: BoxDecoration(
           gradient: gradientButton,
           borderRadius: BorderRadius.circular(30),
