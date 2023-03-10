@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:girl_video_call/controller/HomeController.dart';
 import 'package:girl_video_call/view/Constants/ConstantClass.dart';
-import 'package:girl_video_call/view/UiScreen/SelectGenderScreen.dart';
+import 'package:girl_video_call/view/UiScreen/FavouriteCountryGirl.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:page_transition/page_transition.dart';
@@ -18,10 +18,9 @@ class AddNameScreen extends StatefulWidget {
 }
 
 class _AddNameScreenState extends State<AddNameScreen> {
-  TextEditingController mTeController = TextEditingController();
-  TextEditingController mTextController = TextEditingController();
+  TextEditingController txtNameController = TextEditingController();
+  TextEditingController txtEmailController = TextEditingController();
   HomeController controller = Get.put(HomeController());
-  bool mBlnValidation = false;
   File file = File("");
 
   @override
@@ -34,9 +33,13 @@ class _AddNameScreenState extends State<AddNameScreen> {
         children: [
           Column(
             crossAxisAlignment: CrossAxisAlignment.center,
-            // mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              height(20.h),
+              Container(
+                height: 20.h,
+                width: 100.w,
+                margin: EdgeInsets.symmetric(vertical: 3.5.h),
+                color: Colors.white.withOpacity(0.5),
+              ),
               Stack(
                 alignment: Alignment.topRight,
                 children: [
@@ -105,7 +108,7 @@ class _AddNameScreenState extends State<AddNameScreen> {
                     borderRadius: BorderRadius.circular(30),
                   ),
                   child: TextField(
-                    controller: mTeController,
+                    controller: txtNameController,
                     cursorColor: Colors.white,
                     textAlign: TextAlign.center,
                     style: GoogleFonts.poppins(
@@ -125,15 +128,12 @@ class _AddNameScreenState extends State<AddNameScreen> {
                     ),
                     onChanged: (value) {
                       controller.mStrName = value;
-                      value.length > 3
-                          ? mBlnValidation == false
-                          : mBlnValidation == true;
                       setState(() {});
                     },
                   ),
                 ),
               ),
-              height(3.h),
+              height(2.5.h),
               Container(
                 height: 7.5.h,
                 width: 94.w,
@@ -150,7 +150,7 @@ class _AddNameScreenState extends State<AddNameScreen> {
                     borderRadius: BorderRadius.circular(30),
                   ),
                   child: TextField(
-                    controller: mTextController,
+                    controller: txtEmailController,
                     cursorColor: Colors.white,
                     textAlign: TextAlign.center,
                     style: GoogleFonts.poppins(
@@ -170,9 +170,6 @@ class _AddNameScreenState extends State<AddNameScreen> {
                     ),
                     onChanged: (value) {
                       controller.mStrName = value;
-                      value.length > 3
-                          ? mBlnValidation == false
-                          : mBlnValidation == true;
                       setState(() {});
                     },
                   ),
@@ -181,10 +178,9 @@ class _AddNameScreenState extends State<AddNameScreen> {
             ],
           ),
           Padding(
-            padding: EdgeInsets.only(bottom: 13.h),
+            padding: EdgeInsets.only(bottom: 14.h),
             child: Constants.confirmButton(() {
-              if (mTeController.text.length < 3) {
-                mBlnValidation = true;
+              if (txtNameController.text.length < 3) {
                 Get.snackbar(
                   "Validation",
                   "Please enter attlist 3 latter's..",
@@ -196,15 +192,27 @@ class _AddNameScreenState extends State<AddNameScreen> {
                   icon: Icon(Icons.add_alert,
                       color: Colors.white.withOpacity(0.9)),
                 );
-                setState(() {});
+              } else if (file.path.isEmpty) {
+                Get.snackbar(
+                  "Profile image",
+                  "Please set profile image...",
+                  colorText: Colors.white,
+                  barBlur: 25,
+                  margin: const EdgeInsets.only(bottom: 50),
+                  animationDuration: const Duration(seconds: 3),
+                  snackPosition: SnackPosition.BOTTOM,
+                  icon: Icon(Icons.add_alert,
+                      color: Colors.white.withOpacity(0.9)),
+                );
               } else {
                 Navigator.push(
                   context,
                   PageTransition(
                       duration: const Duration(milliseconds: 1300),
-                      type: PageTransitionType.bottomToTopJoined,
+                      type: PageTransitionType.rotate,
+                      alignment: Alignment.centerRight,
                       childCurrent: const AddNameScreen(),
-                      child: const SelectGenderScreen(),
+                      child: const FavouriteCountryGirl(),
                       inheritTheme: true,
                       ctx: context),
                 );

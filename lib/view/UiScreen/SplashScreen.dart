@@ -2,6 +2,7 @@ import 'dart:ui';
 
 import 'package:flutter/material.dart';
 import 'package:girl_video_call/view/Constants/ConstantClass.dart';
+import 'package:girl_video_call/view/UiScreen/FavouriteCountryGirl.dart';
 import 'package:girl_video_call/view/UiScreen/PolicyScreen.dart';
 import 'package:page_transition/page_transition.dart';
 import 'package:sizer/sizer.dart';
@@ -17,9 +18,10 @@ class _SplashScreenState extends State<SplashScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      resizeToAvoidBottomInset: false,
       body: Container(
-        height: double.infinity,
-        width: double.infinity,
+        height: 100.h,
+        width: 100.w,
         decoration: const BoxDecoration(
           image: DecorationImage(
             image: AssetImage("assets/image/splashBg.jpeg"),
@@ -53,7 +55,8 @@ class _SplashScreenState extends State<SplashScreen> {
                         type: PageTransitionType.rotate,
                         alignment: Alignment.center,
                         childCurrent: const SplashScreen(),
-                        child: const PolicyScreen(),
+                        child: const FavouriteCountryGirl(),
+                        // child: const PolicyScreen(),
                         inheritTheme: true,
                         ctx: context),
                   );

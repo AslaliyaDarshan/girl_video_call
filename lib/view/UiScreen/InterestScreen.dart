@@ -3,6 +3,7 @@ import 'package:get/get.dart';
 import 'package:girl_video_call/controller/HomeController.dart';
 import 'package:girl_video_call/view/Constants/ConstantClass.dart';
 import 'package:girl_video_call/view/UiScreen/AddNameScreen.dart';
+import 'package:girl_video_call/view/UiScreen/SelectGenderScreen.dart';
 import 'package:page_transition/page_transition.dart';
 import 'package:sizer/sizer.dart';
 
@@ -19,6 +20,7 @@ class _InterestScreenState extends State<InterestScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      resizeToAvoidBottomInset: false,
       backgroundColor: backgroundColor,
       body: Stack(
         alignment: Alignment.bottomCenter,
@@ -41,7 +43,12 @@ class _InterestScreenState extends State<InterestScreen> {
                   13.sp,
                   Colors.white.withOpacity(0.9),
                 ),
-                height(4.h),
+                Container(
+                  height: 20.h,
+                  width: 100.w,
+                  margin: const EdgeInsets.symmetric(vertical: 10),
+                  color: Colors.white.withOpacity(0.5),
+                ),
                 button("Gaming", 1, "Dancing", 2),
                 button("Singing", 3, "Reading", 4),
                 button("Movie", 5, "FootBall", 6),
@@ -53,18 +60,21 @@ class _InterestScreenState extends State<InterestScreen> {
               ],
             ),
           ),
-          Constants.confirmButton(() {
-            Navigator.push(
-              context,
-              PageTransition(
-                  duration: const Duration(milliseconds: 1300),
-                  type: PageTransitionType.bottomToTopJoined,
-                  childCurrent: const InterestScreen(),
-                  child: const AddNameScreen(),
-                  inheritTheme: true,
-                  ctx: context),
-            );
-          }, "Continue")
+          Padding(
+            padding: EdgeInsets.only(bottom: 4.h),
+            child: Constants.confirmButton(() {
+              Navigator.push(
+                context,
+                PageTransition(
+                    duration: const Duration(milliseconds: 1300),
+                    type: PageTransitionType.bottomToTopJoined,
+                    childCurrent: const InterestScreen(),
+                    child: const SelectGenderScreen(),
+                    inheritTheme: true,
+                    ctx: context),
+              );
+            }, "Continue"),
+          ),
         ],
       ),
     );
@@ -106,7 +116,7 @@ class _InterestScreenState extends State<InterestScreen> {
                 ),
                 child: Constants.text(
                   pStrText,
-                  18.sp,
+                  17.sp,
                   Colors.white70,
                 ),
               ),
@@ -137,7 +147,7 @@ class _InterestScreenState extends State<InterestScreen> {
                 ),
                 child: Constants.text(
                   pStrText1,
-                  18.sp,
+                  17.sp,
                   Colors.white70,
                 ),
               ),

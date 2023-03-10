@@ -18,7 +18,7 @@ class _PolicyScreenState extends State<PolicyScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return Scaffold(  resizeToAvoidBottomInset: false,
       backgroundColor: backgroundColor,
       body: Column(
         children: [

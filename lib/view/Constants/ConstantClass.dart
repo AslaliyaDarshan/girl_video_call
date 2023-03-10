@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:simple_gradient_text/simple_gradient_text.dart';
 import 'package:sizer/sizer.dart';
@@ -11,6 +12,14 @@ LinearGradient gradientButton = const LinearGradient(
   colors: [
     Color(0xFFe31db6),
     Color(0xFF52bafa),
+  ],
+);
+LinearGradient gradientWhite = const LinearGradient(
+  begin: Alignment.centerLeft,
+  end: Alignment.centerRight,
+  colors: [
+    Color(0xFFFFFFFF),
+    Color(0xFFFFFFFF),
   ],
 );
 
@@ -127,6 +136,44 @@ class Constants {
           21.sp,
           Colors.white,
         ),
+      ),
+    );
+  }
+
+  static warningDialog(String pStrTitle, String pStrWarningText,
+      {void Function()? onTap, void Function()? onTaps}) {
+    Get.defaultDialog(
+      barrierDismissible: false,
+      title: pStrTitle,
+      titleStyle: TextStyle(color: backgroundColor.withOpacity(0.8)),
+      content: text(pStrWarningText, 12.sp, backgroundColor.withOpacity(0.8)),
+      actions: [
+        Padding(
+          padding: const EdgeInsets.symmetric(vertical: 20),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: [button("Cancel"), button("Ok")],
+          ),
+        ),
+      ],
+    );
+  }
+
+  static button(String pStrText) {
+    return InkWell(
+      onTap: () {
+        Get.back();
+      },
+      child: Container(
+        height: 5.h,
+        width: 20.w,
+        alignment: Alignment.center,
+        decoration: BoxDecoration(
+          color: backgroundColor.withOpacity(0.75),
+          borderRadius: BorderRadius.circular(25),
+        ),
+        child: Text(pStrText,
+            style: TextStyle(color: Colors.white, fontSize: 12.sp)),
       ),
     );
   }

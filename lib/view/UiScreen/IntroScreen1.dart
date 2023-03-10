@@ -15,7 +15,7 @@ class IntroScreen1 extends StatefulWidget {
 class _IntroScreen1State extends State<IntroScreen1> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return Scaffold(  resizeToAvoidBottomInset: false,
       backgroundColor: backgroundColor,
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.center,

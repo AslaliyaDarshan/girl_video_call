@@ -14,7 +14,7 @@ class HelloScreen extends StatefulWidget {
 class _HelloScreenState extends State<HelloScreen> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return Scaffold(  resizeToAvoidBottomInset: false,
       backgroundColor: backgroundColor,
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.center,

@@ -15,6 +15,7 @@ class _IntroScreen2State extends State<IntroScreen2> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      resizeToAvoidBottomInset: false,
       backgroundColor: backgroundColor,
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.center,

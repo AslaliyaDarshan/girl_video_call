@@ -23,6 +23,7 @@ class _BestPhotoScreenState extends State<BestPhotoScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      resizeToAvoidBottomInset: false,
       backgroundColor: backgroundColor,
       body: Stack(
         alignment: Alignment.bottomCenter,
@@ -42,25 +43,33 @@ class _BestPhotoScreenState extends State<BestPhotoScreen> {
                     21.sp,
                     Colors.white.withOpacity(0.9),
                   ),
-                  height(3.h),
+                  height(2.h),
                   Constants.text(
                     "Add your best photos to get a higher matches",
                     13.sp,
                     Colors.white.withOpacity(0.9),
                   ),
-                  height(4.h),
+                  Container(
+                    height: 20.h,
+                    width: 100.w,
+                    margin: const EdgeInsets.symmetric(vertical: 10),
+                    color: Colors.white.withOpacity(0.5),
+                  ),
                   Wrap(
-                    children: List.generate(controller.image.length, (index) {
-                      return Container(
-                        height: 34.h,
-                        width: 45.w,
-                        margin: const EdgeInsets.all(7),
-                        child: ClipRRect(
-                          borderRadius: BorderRadius.circular(10),
-                          child: Image.file(file, fit: BoxFit.fill),
-                        ),
-                      );
-                    }),
+                    children: List.generate(
+                      controller.image.length,
+                      (index) {
+                        return Container(
+                          height: 34.h,
+                          width: 45.w,
+                          margin: const EdgeInsets.all(7),
+                          child: ClipRRect(
+                            borderRadius: BorderRadius.circular(10),
+                            child: Image.file(file, fit: BoxFit.fill),
+                          ),
+                        );
+                      },
+                    ),
                   ),
                   Align(
                     alignment: Alignment.centerLeft,
@@ -101,7 +110,7 @@ class _BestPhotoScreenState extends State<BestPhotoScreen> {
               context,
               PageTransition(
                   duration: const Duration(milliseconds: 1300),
-                  type: PageTransitionType.topToBottomJoined,
+                  type: PageTransitionType.bottomToTopJoined,
                   childCurrent: const BestPhotoScreen(),
                   child: const InterestScreen(),
                   inheritTheme: true,
