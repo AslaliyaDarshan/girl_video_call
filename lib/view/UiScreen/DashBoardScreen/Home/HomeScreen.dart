@@ -1,63 +1,82 @@
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:girl_video_call/controller/HomeController.dart';
+import 'package:girl_video_call/model/ModelClass.dart';
+import 'package:girl_video_call/view/UiScreen/DashBoardScreen/Home/VideoScreen.dart';
+import 'package:page_transition/page_transition.dart';
 import 'package:sizer/sizer.dart';
 
-class HomeScreen extends StatefulWidget {
-  const HomeScreen({Key? key}) : super(key: key);
+class HomeScreen extends StatelessWidget {
+  HomeScreen({Key? key}) : super(key: key);
 
-  @override
-  State<HomeScreen> createState() => _HomeScreenState();
-}
+  HomeController controller = Get.put(HomeController());
 
-class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
-    return Container(
-      height: 100.h,
-      width: 100.w,
-      decoration: const BoxDecoration(
-        image: DecorationImage(
-          image: AssetImage("assets/image/bg.gif"),
-          fit: BoxFit.cover,
+    return Scaffold(
+      body: Container(
+        height: 100.h,
+        width: 100.w,
+        decoration: const BoxDecoration(
+          image: DecorationImage(
+            image: AssetImage("assets/image/bg.gif"),
+            fit: BoxFit.cover,
+          ),
         ),
-      ),
-      child: BackdropFilter(
-        filter: ImageFilter.blur(sigmaX: 5.0, sigmaY: 5.0),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.center,
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Expanded(
-              flex: 1,
-              child: GridView.builder(
-                itemCount: 20,
-                physics: const BouncingScrollPhysics(),
-                gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                  crossAxisCount: 2,
-                  mainAxisExtent: 34.h,
-                ),
-                itemBuilder: (context, index) {
-                  return InkWell(
-                    onTap: () {},
-                    child: Padding(
-                      padding: const EdgeInsets.all(12.0),
-                      child: ClipRRect(
-                        borderRadius: const BorderRadius.only(
-                          topRight: Radius.circular(25),
-                          bottomLeft: Radius.circular(25),
-                        ),
-                        child: Image.asset(
-                          "assets/image/thailand.jpg",
-                          fit: BoxFit.cover,
+        child: BackdropFilter(
+          filter: ImageFilter.blur(sigmaX: 7.0, sigmaY: 7.0),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Expanded(
+                flex: 1,
+                child: GridView.builder(
+                  itemCount: controller.list.length,
+                  physics: const BouncingScrollPhysics(),
+                  gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                    crossAxisCount: 2,
+                    mainAxisExtent: 32.h,
+                  ),
+                  itemBuilder: (context, index) {
+                    return InkWell(
+                      onTap: () {
+                        controller.modelClass = ModelClass(
+                            image: controller.list[index].image,
+                            video: controller.list[index].video);
+                        Navigator.push(
+                          context,
+                          PageTransition(
+                              duration: const Duration(milliseconds: 1300),
+                              type: PageTransitionType.theme,
+                              alignment: Alignment.center,
+                              childCurrent: HomeScreen(),
+                              child: const VideoScreen(),
+                              inheritTheme: true,
+                              ctx: context),
+                        );
+                      },
+                      child: Padding(
+                        padding: const EdgeInsets.all(12.0),
+                        child: ClipRRect(
+                          borderRadius: const BorderRadius.only(
+                            topRight: Radius.circular(30),
+                            bottomLeft: Radius.circular(30),
+                          ),
+                          child: Image.asset(
+                            "${controller.list[index].image}",
+                            fit: BoxFit.cover,
+                          ),
                         ),
                       ),
-                    ),
-                  );
-                },
-              ),
-            )
-          ],
+                    );
+                  },
+                ),
+              )
+            ],
+          ),
         ),
       ),
     );

@@ -18,9 +18,7 @@ class _FavouriteCountryGirlState extends State<FavouriteCountryGirl> {
 
   @override
   void initState() {
-    setState(() {
-      controller.select1 = 1;
-    });
+    controller.select1.value = 1;
     super.initState();
   }
 
@@ -49,12 +47,12 @@ class _FavouriteCountryGirlState extends State<FavouriteCountryGirl> {
                 ),
                 image(1, "assets/image/indian.jpg", "Indian Girls", 2,
                     "assets/image/rasian.jpg", "Russian Girls"),
-                image(3, "assets/image/maliasian.jpg", "Malaysian Girls", 4,
-                    "assets/image/korean.jpg", "Korean Girls"),
-                image(5, "assets/image/turki.jpg", "Turkish Girls", 6,
-                    "assets/image/usa.jpg", "USA Girls"),
-                image(7, "assets/image/pakistani.jpg", "Pakistani Girls", 8,
+                image(3, "assets/image/pakistani.jpg", "Pakistani Girls", 4,
                     "assets/image/thailand.jpg", "Thailand Girls"),
+                image(5, "assets/image/maliasian.jpg", "Malaysian Girls", 6,
+                    "assets/image/korean.jpg", "Korean Girls"),
+                image(7, "assets/image/turki.jpg", "Turkish Girls", 8,
+                    "assets/image/usa.jpg", "USA Girls"),
                 image(9, "assets/image/ukrain.jpg", "Ukraine Girls", 10,
                     "assets/image/newzealand.jpg", "New Zealand Girls"),
                 height(8.h)
@@ -64,7 +62,19 @@ class _FavouriteCountryGirlState extends State<FavouriteCountryGirl> {
           Padding(
             padding: EdgeInsets.only(bottom: 2.5.h),
             child: Constants.confirmButton(() {
-              Get.toNamed("/DashBoardScreen");
+              Navigator.push(
+                context,
+                PageTransition(
+                    duration: const Duration(milliseconds: 1300),
+                    type: PageTransitionType.fade,
+                    alignment: Alignment.center,
+                    childCurrent: FavouriteCountryGirl(),
+                    //child: const FavouriteCountryGirl(),
+                    child: const DashBoardScreen(),
+                    inheritTheme: true,
+                    ctx: context),
+              );
+              // Get.toNamed("/DashBoardScreen");
             }, "Confirm"),
           )
         ],
@@ -82,58 +92,62 @@ class _FavouriteCountryGirlState extends State<FavouriteCountryGirl> {
   ) {
     return Column(
       children: [
-        Row(
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-          children: [
-            InkWell(
-              splashColor: backgroundColor,
-              borderRadius: BorderRadius.circular(10),
-              onTap: () {
-                setState(() {
-                  controller.select1 = pIntIndex;
-                });
-              },
-              child: Container(
-                height: 30.h,
-                width: 43.w,
-                margin: const EdgeInsets.all(7),
-                padding: const EdgeInsets.all(4),
-                decoration: BoxDecoration(
-                  gradient:
-                      controller.select1 == pIntIndex ? gradientButton : null,
-                  borderRadius: BorderRadius.circular(10),
-                ),
-                child: ClipRRect(
-                  borderRadius: BorderRadius.circular(10),
-                  child: Image.asset(pStrUrl, fit: BoxFit.cover),
-                ),
-              ),
-            ),
-            InkWell(
-              splashColor: backgroundColor,
-              borderRadius: BorderRadius.circular(10),
-              onTap: () {
-                setState(() {
-                  controller.select1 = pIntIndex1;
-                });
-              },
-              child: Container(
-                height: 30.h,
-                width: 43.w,
-                margin: const EdgeInsets.all(7),
-                padding: const EdgeInsets.all(4),
-                decoration: BoxDecoration(
-                  gradient:
-                      controller.select1 == pIntIndex1 ? gradientButton : null,
-                  borderRadius: BorderRadius.circular(10),
-                ),
-                child: ClipRRect(
-                  borderRadius: BorderRadius.circular(10),
-                  child: Image.asset(pStrUrl1, fit: BoxFit.cover),
+        Obx(
+          () => Row(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: [
+              InkWell(
+                splashColor: backgroundColor,
+                borderRadius: BorderRadius.circular(10),
+                onTap: () {
+                  setState(() {
+                    controller.select1.value = pIntIndex;
+                  });
+                },
+                child: Container(
+                  height: 30.h,
+                  width: 43.w,
+                  margin: const EdgeInsets.all(7),
+                  padding: const EdgeInsets.all(4),
+                  decoration: BoxDecoration(
+                    gradient: controller.select1.value == pIntIndex
+                        ? gradientButton
+                        : null,
+                    borderRadius: BorderRadius.circular(10),
+                  ),
+                  child: ClipRRect(
+                    borderRadius: BorderRadius.circular(10),
+                    child: Image.asset(pStrUrl, fit: BoxFit.cover),
+                  ),
                 ),
               ),
-            ),
-          ],
+              InkWell(
+                splashColor: backgroundColor,
+                borderRadius: BorderRadius.circular(10),
+                onTap: () {
+                  setState(() {
+                    controller.select1.value = pIntIndex1;
+                  });
+                },
+                child: Container(
+                  height: 30.h,
+                  width: 43.w,
+                  margin: const EdgeInsets.all(7),
+                  padding: const EdgeInsets.all(4),
+                  decoration: BoxDecoration(
+                    gradient: controller.select1.value == pIntIndex1
+                        ? gradientButton
+                        : null,
+                    borderRadius: BorderRadius.circular(10),
+                  ),
+                  child: ClipRRect(
+                    borderRadius: BorderRadius.circular(10),
+                    child: Image.asset(pStrUrl1, fit: BoxFit.cover),
+                  ),
+                ),
+              ),
+            ],
+          ),
         ),
         Transform.translate(
           offset: const Offset(0, -10),

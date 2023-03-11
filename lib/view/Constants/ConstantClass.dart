@@ -177,4 +177,17 @@ class Constants {
       ),
     );
   }
+
+  static snackBar(String pStrTitle, String pStrMsg) {
+    return Get.snackbar(
+      pStrTitle,
+      pStrMsg,
+      colorText: Colors.white,
+      barBlur: 25,
+      margin: const EdgeInsets.only(bottom: 50),
+      animationDuration: const Duration(seconds: 3),
+      snackPosition: SnackPosition.BOTTOM,
+      icon: Icon(Icons.add_alert, color: Colors.white.withOpacity(0.9)),
+    );
+  }
 }

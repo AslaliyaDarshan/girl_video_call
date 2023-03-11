@@ -5,14 +5,9 @@ import 'package:girl_video_call/view/UiScreen/IntroScreen1.dart';
 import 'package:page_transition/page_transition.dart';
 import 'package:sizer/sizer.dart';
 
-class IntroScreen extends StatefulWidget {
+class IntroScreen extends StatelessWidget {
   const IntroScreen({Key? key}) : super(key: key);
 
-  @override
-  State<IntroScreen> createState() => _IntroScreenState();
-}
-
-class _IntroScreenState extends State<IntroScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(

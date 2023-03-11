@@ -4,10 +4,8 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:girl_video_call/controller/HomeController.dart';
 import 'package:girl_video_call/view/Constants/ConstantClass.dart';
-import 'package:girl_video_call/view/UiScreen/FavouriteCountryGirl.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:image_picker/image_picker.dart';
-import 'package:page_transition/page_transition.dart';
 import 'package:sizer/sizer.dart';
 
 class AddNameScreen extends StatefulWidget {
@@ -181,41 +179,13 @@ class _AddNameScreenState extends State<AddNameScreen> {
             padding: EdgeInsets.only(bottom: 14.h),
             child: Constants.confirmButton(() {
               if (txtNameController.text.length < 3) {
-                Get.snackbar(
-                  "Validation",
-                  "Please enter attlist 3 latter's..",
-                  colorText: Colors.white,
-                  barBlur: 25,
-                  margin: const EdgeInsets.only(bottom: 50),
-                  animationDuration: const Duration(seconds: 3),
-                  snackPosition: SnackPosition.BOTTOM,
-                  icon: Icon(Icons.add_alert,
-                      color: Colors.white.withOpacity(0.9)),
-                );
+                Constants.snackBar(
+                    "Validation", "Please enter attlist 3 latter's...");
               } else if (file.path.isEmpty) {
-                Get.snackbar(
-                  "Profile image",
-                  "Please set profile image...",
-                  colorText: Colors.white,
-                  barBlur: 25,
-                  margin: const EdgeInsets.only(bottom: 50),
-                  animationDuration: const Duration(seconds: 3),
-                  snackPosition: SnackPosition.BOTTOM,
-                  icon: Icon(Icons.add_alert,
-                      color: Colors.white.withOpacity(0.9)),
-                );
+                Constants.snackBar(
+                    "Profile image", "Please set profile image...");
               } else {
-                Navigator.push(
-                  context,
-                  PageTransition(
-                      duration: const Duration(milliseconds: 1300),
-                      type: PageTransitionType.rotate,
-                      alignment: Alignment.centerRight,
-                      childCurrent: const AddNameScreen(),
-                      child: const FavouriteCountryGirl(),
-                      inheritTheme: true,
-                      ctx: context),
-                );
+                Get.offAllNamed("/FavouriteCountryGirl");
               }
             }, "Continue"),
           ),
@@ -248,8 +218,6 @@ class _AddNameScreenState extends State<AddNameScreen> {
 
                 try {
                   file = File(f2!.path);
-
-                  controller.image.add(file.path);
                 } catch (e) {
                   print("Darshan$e");
                 }
@@ -261,7 +229,6 @@ class _AddNameScreenState extends State<AddNameScreen> {
                 XFile? f2 = await img.pickImage(source: ImageSource.gallery);
                 try {
                   file = File(f2!.path);
-                  controller.image.add(file.path);
                   setState(() {});
                 } catch (e) {
                   print("Darshan$e");

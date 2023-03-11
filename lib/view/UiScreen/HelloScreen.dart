@@ -4,17 +4,13 @@ import 'package:girl_video_call/view/UiScreen/BestPhotoScreen.dart';
 import 'package:page_transition/page_transition.dart';
 import 'package:sizer/sizer.dart';
 
-class HelloScreen extends StatefulWidget {
+class HelloScreen extends StatelessWidget {
   const HelloScreen({Key? key}) : super(key: key);
 
   @override
-  State<HelloScreen> createState() => _HelloScreenState();
-}
-
-class _HelloScreenState extends State<HelloScreen> {
-  @override
   Widget build(BuildContext context) {
-    return Scaffold(  resizeToAvoidBottomInset: false,
+    return Scaffold(
+      resizeToAvoidBottomInset: false,
       backgroundColor: backgroundColor,
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.center,

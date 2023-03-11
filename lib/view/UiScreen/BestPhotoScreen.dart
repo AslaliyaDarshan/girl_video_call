@@ -57,7 +57,7 @@ class _BestPhotoScreenState extends State<BestPhotoScreen> {
                   ),
                   Wrap(
                     children: List.generate(
-                      controller.image.length,
+                      controller.bestImageList.length,
                       (index) {
                         return Container(
                           height: 34.h,
@@ -146,8 +146,7 @@ class _BestPhotoScreenState extends State<BestPhotoScreen> {
 
                 try {
                   file = File(f2!.path);
-
-                  controller.image.add(file.path);
+                  controller.bestImageList.add(file.path);
                 } catch (e) {
                   print("Darshan$e");
                 }
@@ -159,7 +158,7 @@ class _BestPhotoScreenState extends State<BestPhotoScreen> {
                 XFile? f2 = await img.pickImage(source: ImageSource.gallery);
                 try {
                   file = File(f2!.path);
-                  controller.image.add(file.path);
+                  controller.bestImageList.add(file.path);
                   setState(() {});
                 } catch (e) {
                   print("Darshan$e");

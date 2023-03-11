@@ -98,14 +98,14 @@ class _SelectGenderScreenState extends State<SelectGenderScreen> {
                 context,
                 PageTransition(
                     duration: const Duration(milliseconds: 1300),
-                    type: PageTransitionType.topToBottomJoined,
+                    type: PageTransitionType.bottomToTopJoined,
                     childCurrent: const SelectGenderScreen(),
                     child: const AddNameScreen(),
                     inheritTheme: true,
                     ctx: context),
               );
             } else {
-              Constants.warningDialog(
+              Constants.snackBar(
                   "Select Gender", "Please select any gender...");
             }
           }, "Continue")

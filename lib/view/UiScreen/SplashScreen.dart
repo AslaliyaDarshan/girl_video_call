@@ -7,14 +7,9 @@ import 'package:girl_video_call/view/UiScreen/PolicyScreen.dart';
 import 'package:page_transition/page_transition.dart';
 import 'package:sizer/sizer.dart';
 
-class SplashScreen extends StatefulWidget {
+class SplashScreen extends StatelessWidget {
   const SplashScreen({Key? key}) : super(key: key);
 
-  @override
-  State<SplashScreen> createState() => _SplashScreenState();
-}
-
-class _SplashScreenState extends State<SplashScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -55,8 +50,8 @@ class _SplashScreenState extends State<SplashScreen> {
                         type: PageTransitionType.rotate,
                         alignment: Alignment.center,
                         childCurrent: const SplashScreen(),
-                        child: const FavouriteCountryGirl(),
-                        // child: const PolicyScreen(),
+                        // child: const FavouriteCountryGirl(),
+                        child: const PolicyScreen(),
                         inheritTheme: true,
                         ctx: context),
                   );

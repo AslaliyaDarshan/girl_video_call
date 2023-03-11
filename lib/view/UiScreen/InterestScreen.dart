@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:girl_video_call/controller/HomeController.dart';
 import 'package:girl_video_call/view/Constants/ConstantClass.dart';
-import 'package:girl_video_call/view/UiScreen/AddNameScreen.dart';
 import 'package:girl_video_call/view/UiScreen/SelectGenderScreen.dart';
 import 'package:page_transition/page_transition.dart';
 import 'package:sizer/sizer.dart';
@@ -67,7 +66,7 @@ class _InterestScreenState extends State<InterestScreen> {
                 context,
                 PageTransition(
                     duration: const Duration(milliseconds: 1300),
-                    type: PageTransitionType.bottomToTopJoined,
+                    type: PageTransitionType.topToBottomJoined,
                     childCurrent: const InterestScreen(),
                     child: const SelectGenderScreen(),
                     inheritTheme: true,
@@ -86,74 +85,75 @@ class _InterestScreenState extends State<InterestScreen> {
     String pStrText1,
     int pIntIndex1,
   ) {
-    return Padding(
-      padding: const EdgeInsets.symmetric(vertical: 20),
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-        children: [
-          InkWell(
-            onTap: () {
-              controller.select = pIntIndex;
-              setState(() {});
-            },
-            borderRadius: BorderRadius.circular(20),
-            child: Container(
-              height: 8.5.h,
-              width: 43.w,
-              alignment: Alignment.center,
-              decoration: BoxDecoration(
-                gradient: gradientButton,
-                borderRadius: BorderRadius.circular(20),
-              ),
+    return Obx(
+      () => Padding(
+        padding: const EdgeInsets.symmetric(vertical: 20),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          children: [
+            InkWell(
+              onTap: () {
+                controller.select.value = pIntIndex;
+              },
+              borderRadius: BorderRadius.circular(20),
               child: Container(
-                margin: const EdgeInsets.all(2.5),
+                height: 8.5.h,
+                width: 43.w,
                 alignment: Alignment.center,
                 decoration: BoxDecoration(
-                  color: controller.select == pIntIndex
-                      ? policyBackgroundColor
-                      : backgroundColor,
+                  gradient: gradientButton,
                   borderRadius: BorderRadius.circular(20),
                 ),
-                child: Constants.text(
-                  pStrText,
-                  17.sp,
-                  Colors.white70,
+                child: Container(
+                  margin: const EdgeInsets.all(2.5),
+                  alignment: Alignment.center,
+                  decoration: BoxDecoration(
+                    color: controller.select.value == pIntIndex
+                        ? policyBackgroundColor
+                        : backgroundColor,
+                    borderRadius: BorderRadius.circular(20),
+                  ),
+                  child: Constants.text(
+                    pStrText,
+                    17.sp,
+                    Colors.white70,
+                  ),
                 ),
               ),
             ),
-          ),
-          InkWell(
-            borderRadius: BorderRadius.circular(20),
-            onTap: () {
-              controller.select = pIntIndex1;
-              setState(() {});
-            },
-            child: Container(
-              height: 8.5.h,
-              width: 43.w,
-              alignment: Alignment.center,
-              decoration: BoxDecoration(
-                gradient: gradientButton,
-                borderRadius: BorderRadius.circular(20),
-              ),
+            InkWell(
+              borderRadius: BorderRadius.circular(20),
+              onTap: () {
+                controller.select.value = pIntIndex1;
+                setState(() {});
+              },
               child: Container(
-                margin: const EdgeInsets.all(2.5),
+                height: 8.5.h,
+                width: 43.w,
                 alignment: Alignment.center,
                 decoration: BoxDecoration(
-                  color: controller.select == pIntIndex1
-                      ? policyBackgroundColor
-                      : backgroundColor,
+                  gradient: gradientButton,
                   borderRadius: BorderRadius.circular(20),
                 ),
-                child: Constants.text(
-                  pStrText1,
-                  17.sp,
-                  Colors.white70,
+                child: Container(
+                  margin: const EdgeInsets.all(2.5),
+                  alignment: Alignment.center,
+                  decoration: BoxDecoration(
+                    color: controller.select.value == pIntIndex1
+                        ? policyBackgroundColor
+                        : backgroundColor,
+                    borderRadius: BorderRadius.circular(20),
+                  ),
+                  child: Constants.text(
+                    pStrText1,
+                    17.sp,
+                    Colors.white70,
+                  ),
                 ),
               ),
             ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }

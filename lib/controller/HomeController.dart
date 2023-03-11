@@ -2,13 +2,25 @@ import 'package:get/get.dart';
 import 'package:girl_video_call/model/ModelClass.dart';
 
 class HomeController extends GetxController {
-  List<String> image = [];
-  int select = 1;
-  int select1 = 1;
+  List<String> bestImageList = [];
+
+  RxInt select = 1.obs;
+  RxInt select1 = 1.obs;
+
   RxBool man = false.obs;
   RxBool woMan = false.obs;
+  RxBool enable = true.obs;
+  RxBool camera = false.obs;
+  RxBool mute = false.obs;
+  bool mBlnIsPlay = false;
+
   String mStrName = "Admin";
-  late String mStrFileName = "";
+  String mStrFileName = "";
+
+  void playPause() {
+    mBlnIsPlay = !mBlnIsPlay;
+    update();
+  }
 
   ModelClass? modelClass;
   List<ModelClass> list = [
