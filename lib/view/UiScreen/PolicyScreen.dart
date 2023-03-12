@@ -24,7 +24,7 @@ class _PolicyScreenState extends State<PolicyScreen> {
         children: [
           height(9.h),
           Container(
-            height: 75.h,
+            height: MediaQuery.of(context).size.height /1.4,
             width: 100.w,
             margin: const EdgeInsets.all(8),
             decoration: BoxDecoration(

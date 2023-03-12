@@ -20,7 +20,7 @@ class _ChatScreenState extends State<ChatScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
         body: GridView.builder(
-      itemCount: controller.list.length,
+      itemCount: controller.dataList.length,
       physics: const BouncingScrollPhysics(),
       gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
         crossAxisCount: 2,
@@ -30,8 +30,8 @@ class _ChatScreenState extends State<ChatScreen> {
         return InkWell(
           onTap: () {
             controller.modelClass = ModelClass(
-                image: controller.list[index].image,
-                video: controller.list[index].video);
+                image: controller.dataList[index].image,
+                video: controller.dataList[index].video);
             // Navigator.push(
             //   context,
             //   PageTransition(
@@ -53,7 +53,7 @@ class _ChatScreenState extends State<ChatScreen> {
                 bottomLeft: Radius.circular(30),
               ),
               child: Image.asset(
-                "${controller.list[index].image}",
+                "${controller.dataList[index].image}",
                 fit: BoxFit.cover,
               ),
             ),

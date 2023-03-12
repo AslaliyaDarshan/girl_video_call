@@ -34,7 +34,7 @@ class HomeScreen extends StatelessWidget {
               Expanded(
                 flex: 1,
                 child: GridView.builder(
-                  itemCount: controller.list.length,
+                  itemCount: controller.dataList.length,
                   physics: const BouncingScrollPhysics(),
                   gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                     crossAxisCount: 2,
@@ -44,8 +44,8 @@ class HomeScreen extends StatelessWidget {
                     return InkWell(
                       onTap: () {
                         controller.modelClass = ModelClass(
-                            image: controller.list[index].image,
-                            video: controller.list[index].video);
+                            image: controller.dataList[index].image,
+                            video: controller.dataList[index].video);
                         Navigator.push(
                           context,
                           PageTransition(
@@ -66,7 +66,7 @@ class HomeScreen extends StatelessWidget {
                             bottomLeft: Radius.circular(30),
                           ),
                           child: Image.asset(
-                            "${controller.list[index].image}",
+                            "${controller.dataList[index].image}",
                             fit: BoxFit.cover,
                           ),
                         ),

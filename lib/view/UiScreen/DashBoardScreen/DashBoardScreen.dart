@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:girl_video_call/view/Constants/ConstantClass.dart';
 import 'package:girl_video_call/view/UiScreen/DashBoardScreen/Chat/ChatScreen.dart';
 import 'package:girl_video_call/view/UiScreen/DashBoardScreen/Home/HomeScreen.dart';
+import 'package:girl_video_call/view/UiScreen/DashBoardScreen/profile/ProfileScreen.dart';
 import 'package:sizer/sizer.dart';
 
 class DashBoardScreen extends StatefulWidget {
@@ -32,7 +33,7 @@ class _DashBoardScreenState extends State<DashBoardScreen> {
                 HomeScreen(),
                 HomeScreen(),
                 const ChatScreen(),
-                HomeScreen(),
+                ProfileScreen(),
               ],
             ),
             Container(
@@ -89,7 +90,7 @@ class _DashBoardScreenState extends State<DashBoardScreen> {
                     child: Icon(
                         currentIndex == 3
                             ? Icons.favorite_outlined
-                            : Icons.favorite_outline,
+                            : Icons.person,
                         size: 28.sp),
                   ),
                 ],

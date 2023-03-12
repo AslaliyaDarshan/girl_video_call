@@ -39,7 +39,7 @@ class SplashScreen extends StatelessWidget {
               ),
               height(3.h),
               Constants.text("Welcome", 30.sp, Colors.white),
-              height(45.h),
+              height(46.h),
               InkWell(
                 borderRadius: BorderRadius.circular(30),
                 onTap: () {
@@ -50,8 +50,8 @@ class SplashScreen extends StatelessWidget {
                         type: PageTransitionType.rotate,
                         alignment: Alignment.center,
                         childCurrent: const SplashScreen(),
-                        // child: const FavouriteCountryGirl(),
-                        child: const PolicyScreen(),
+                         child: const FavouriteCountryGirl(),
+                        //child: const PolicyScreen(),
                         inheritTheme: true,
                         ctx: context),
                   );

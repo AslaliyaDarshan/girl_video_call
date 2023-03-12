@@ -23,7 +23,7 @@ class HomeController extends GetxController {
   }
 
   ModelClass? modelClass;
-  List<ModelClass> list = [
+  List<ModelClass> dataList = [
     ModelClass(
         image: "assets/image/videoImage/indian.jpg",
         video: "assets/image/video/1.mp4"),
