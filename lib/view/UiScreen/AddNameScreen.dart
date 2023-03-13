@@ -252,7 +252,7 @@ class _AddNameScreenState extends State<AddNameScreen> {
         pStrText,
         style: TextStyle(
             color: backgroundColor.withOpacity(0.7),
-            fontSize: 14.sp,
+            fontSize: 16.px,
             fontWeight: FontWeight.w700),
       ),
     );

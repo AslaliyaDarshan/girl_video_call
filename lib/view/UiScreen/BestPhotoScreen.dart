@@ -105,6 +105,9 @@ class _BestPhotoScreenState extends State<BestPhotoScreen> {
               ),
             ),
           ),
+          Padding(
+            padding: EdgeInsets.only(bottom: 5.h),
+            child:
           Constants.confirmButton(() {
             Navigator.push(
               context,
@@ -117,6 +120,7 @@ class _BestPhotoScreenState extends State<BestPhotoScreen> {
                   ctx: context),
             );
           }, "Continue"),
+          ),
         ],
       ),
     );

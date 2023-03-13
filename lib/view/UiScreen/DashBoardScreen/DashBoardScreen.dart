@@ -2,6 +2,7 @@ import 'dart:io';
 
 import 'package:flutter/material.dart';
 import 'package:girl_video_call/view/Constants/ConstantClass.dart';
+import 'package:girl_video_call/view/UiScreen/DashBoardScreen/Chat/ChatScreen.dart';
 import 'package:girl_video_call/view/UiScreen/DashBoardScreen/Explore/LikeScreen.dart';
 import 'package:girl_video_call/view/UiScreen/DashBoardScreen/Home/HomeScreen.dart';
 import 'package:girl_video_call/view/UiScreen/DashBoardScreen/profile/ProfileScreen.dart';
@@ -31,7 +32,7 @@ class _DashBoardScreenState extends State<DashBoardScreen> {
               index: currentIndex,
               children: [
                 HomeScreen(),
-                HomeScreen(),
+                ChatScreen(),
                 LikeScreen(),
                 ProfileScreen(),
               ],

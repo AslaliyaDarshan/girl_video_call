@@ -44,7 +44,7 @@ Future<void> main() async {
               "/FavouriteCountryGirl": (context) =>
                   const FavouriteCountryGirl(),
               "/DashBoardScreen": (context) => const DashBoardScreen(),
-              "/HomeScreen": (context) => HomeScreen(),
+              "/HomeScreen": (context) => const HomeScreen(),
             },
           );
         },

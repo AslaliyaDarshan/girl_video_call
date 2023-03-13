@@ -115,7 +115,7 @@ class _InterestScreenState extends State<InterestScreen> {
                   ),
                   child: Constants.text(
                     pStrText,
-                    18.5.sp,
+                    20.px,
                     Colors.white70,
                   ),
                 ),
@@ -146,7 +146,7 @@ class _InterestScreenState extends State<InterestScreen> {
                   ),
                   child: Constants.text(
                     pStrText1,
-                    18.5.sp,
+                    20.px,
                     Colors.white70,
                   ),
                 ),

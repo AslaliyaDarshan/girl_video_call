@@ -28,7 +28,7 @@ class HelloScreen extends StatelessWidget {
           ),
           Constants.gradientText("It's a match", 30.sp),
           Constants.text(
-              "Don't keep her waiting say hello now ", 15.sp, Colors.white),
+              "Don't keep her waiting say hello now ", 18.sp, Colors.white),
           height(4.h),
           Constants.skipButton(() {
             Navigator.push(

@@ -22,6 +22,7 @@ class _PolicyScreenState extends State<PolicyScreen> {
       resizeToAvoidBottomInset: false,
       backgroundColor: backgroundColor,
       body: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
         children: [
           height(9.h),
           Container(
@@ -60,16 +61,18 @@ class _PolicyScreenState extends State<PolicyScreen> {
                             fontSize: 22.sp),
                       ),
                       SelectableText(
-                        """      
-                          
+                        """
+                             
 Introduction These Application Terms and Conditions written on this application shall manage your use of this application. These Terms will be applied fully and affect tp your use of this Application. By using this Application, you agreed to accept all terms and conditions written in here. You must not use this Application if you disagree with any of these Application Standard Terms and Conditions.
+ 
  
 Minors or people below 18 years old not allowed to use this Application.
  """,
                         style: TextStyle(
                             color: Colors.white.withOpacity(0.7),
-                            fontSize: 18.sp),
+                            fontSize: 19.sp),
                       ),
+                      Spacer(),
                       CheckboxListTile(
                         title: Text(
                           'I Agree with The Terms And Condition',

@@ -154,8 +154,8 @@ class _FavouriteCountryGirlState extends State<FavouriteCountryGirl> {
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: [
-              Constants.gradientText(pStrCountry, 15.sp),
-              Constants.gradientText(pStrCountry1, 15.sp),
+              Constants.gradientText(pStrCountry, 17.px),
+              Constants.gradientText(pStrCountry1, 17.px),
             ],
           ),
         )

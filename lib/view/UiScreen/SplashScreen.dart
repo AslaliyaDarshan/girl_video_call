@@ -34,7 +34,7 @@ class SplashScreen extends StatelessWidget {
                 children: [
                   Image.asset("assets/image/lips.png",
                       height: 18.h, width: 18.h, fit: BoxFit.contain),
-                  Constants.gradientText("Flirt", 30.sp),
+                  Constants.gradientText("Flirt", 32.sp),
                 ],
               ),
               height(3.h),

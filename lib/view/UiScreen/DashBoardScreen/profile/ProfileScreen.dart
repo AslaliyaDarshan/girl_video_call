@@ -147,7 +147,6 @@ class _ProfileScreenState extends State<ProfileScreen> {
                                     const EdgeInsets.symmetric(horizontal: 12),
                                 decoration: BoxDecoration(
                                   borderRadius: BorderRadius.circular(12),
-                                  color: Colors.red,
                                 ),
                                 child: ClipRRect(
                                   borderRadius: BorderRadius.circular(12),
