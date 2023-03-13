@@ -4,7 +4,7 @@ import 'package:girl_video_call/controller/HomeController.dart';
 import 'package:girl_video_call/view/Constants/ConstantClass.dart';
 import 'package:girl_video_call/view/UiScreen/AddNameScreen.dart';
 import 'package:page_transition/page_transition.dart';
-import 'package:sizer/sizer.dart';
+import 'package:responsive_sizer/responsive_sizer.dart';
 
 class SelectGenderScreen extends StatefulWidget {
   const SelectGenderScreen({Key? key}) : super(key: key);
@@ -46,7 +46,7 @@ class _SelectGenderScreenState extends State<SelectGenderScreen> {
                     padding: const EdgeInsets.all(4),
                     decoration: BoxDecoration(
                       gradient:
-                          controller.man.value ? gradientButton : gradientWhite,
+                          controller.man.value ? gradientColor : gradientWhite,
                       borderRadius: BorderRadius.circular(10),
                     ),
                     child: Container(
@@ -73,7 +73,7 @@ class _SelectGenderScreenState extends State<SelectGenderScreen> {
                     padding: const EdgeInsets.all(4),
                     decoration: BoxDecoration(
                       gradient: controller.woMan.value
-                          ? gradientButton
+                          ? gradientColor
                           : gradientWhite,
                       borderRadius: BorderRadius.circular(10),
                     ),

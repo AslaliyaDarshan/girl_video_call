@@ -4,7 +4,7 @@ import 'package:girl_video_call/controller/HomeController.dart';
 import 'package:girl_video_call/view/Constants/ConstantClass.dart';
 import 'package:girl_video_call/view/UiScreen/SelectGenderScreen.dart';
 import 'package:page_transition/page_transition.dart';
-import 'package:sizer/sizer.dart';
+import 'package:responsive_sizer/responsive_sizer.dart';
 
 class InterestScreen extends StatefulWidget {
   const InterestScreen({Key? key}) : super(key: key);
@@ -33,13 +33,13 @@ class _InterestScreenState extends State<InterestScreen> {
                 height(4.h),
                 Constants.text(
                   "Select your interest",
-                  21.sp,
+                  23.sp,
                   Colors.white.withOpacity(0.9),
                 ),
                 height(3.h),
                 Constants.text(
                   "Select your interests to match with soul mate who have similar things in common.",
-                  13.sp,
+                  16.5.sp,
                   Colors.white.withOpacity(0.9),
                 ),
                 Container(
@@ -101,7 +101,7 @@ class _InterestScreenState extends State<InterestScreen> {
                 width: 43.w,
                 alignment: Alignment.center,
                 decoration: BoxDecoration(
-                  gradient: gradientButton,
+                  gradient: gradientColor,
                   borderRadius: BorderRadius.circular(20),
                 ),
                 child: Container(
@@ -115,7 +115,7 @@ class _InterestScreenState extends State<InterestScreen> {
                   ),
                   child: Constants.text(
                     pStrText,
-                    17.sp,
+                    18.5.sp,
                     Colors.white70,
                   ),
                 ),
@@ -132,7 +132,7 @@ class _InterestScreenState extends State<InterestScreen> {
                 width: 43.w,
                 alignment: Alignment.center,
                 decoration: BoxDecoration(
-                  gradient: gradientButton,
+                  gradient: gradientColor,
                   borderRadius: BorderRadius.circular(20),
                 ),
                 child: Container(
@@ -146,7 +146,7 @@ class _InterestScreenState extends State<InterestScreen> {
                   ),
                   child: Constants.text(
                     pStrText1,
-                    17.sp,
+                    18.5.sp,
                     Colors.white70,
                   ),
                 ),

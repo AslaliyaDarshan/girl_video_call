@@ -15,19 +15,19 @@ import 'package:girl_video_call/view/UiScreen/IntroScreen2.dart';
 import 'package:girl_video_call/view/UiScreen/PolicyScreen.dart';
 import 'package:girl_video_call/view/UiScreen/SelectGenderScreen.dart';
 import 'package:girl_video_call/view/UiScreen/SplashScreen.dart';
-import 'package:sizer/sizer.dart';
+import 'package:responsive_sizer/responsive_sizer.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   // MobileAds.instance.initialize();
   await FaceCamera.initialize();
   SystemChrome.setPreferredOrientations([
-    DeviceOrientation.portraitUp,
-    DeviceOrientation.portraitDown,
+    // DeviceOrientation.portraitUp,
+    // DeviceOrientation.portraitDown,
   ]).then(
     (value) => runApp(
-      Sizer(
-        builder: (context, orientation, deviceType) {
+      ResponsiveSizer(
+        builder: (p0, p1, p2) {
           return GetMaterialApp(
             debugShowCheckedModeBanner: false,
             routes: {

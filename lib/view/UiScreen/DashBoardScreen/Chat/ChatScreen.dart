@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:girl_video_call/controller/HomeController.dart';
 import 'package:girl_video_call/model/ModelClass.dart';
-import 'package:girl_video_call/view/UiScreen/DashBoardScreen/Explore/SecondPage.dart';
+import 'package:girl_video_call/view/UiScreen/DashBoardScreen/Explore/LikeScreen.dart';
 import 'package:sizer/sizer.dart';
 
 class ChatScreen extends StatefulWidget {
@@ -43,7 +43,6 @@ class _ChatScreenState extends State<ChatScreen> {
             //       inheritTheme: true,
             //       ctx: context),
             // );
-            context.pushTransparentRoute(SecondPage());
           },
           child: Padding(
             padding: const EdgeInsets.all(12.0),

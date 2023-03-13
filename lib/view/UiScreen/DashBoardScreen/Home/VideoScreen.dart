@@ -7,7 +7,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:girl_video_call/controller/HomeController.dart';
 import 'package:girl_video_call/view/Constants/ConstantClass.dart';
-import 'package:sizer/sizer.dart';
+import 'package:responsive_sizer/responsive_sizer.dart';
 import 'package:video_player/video_player.dart';
 
 class VideoScreen extends StatefulWidget {

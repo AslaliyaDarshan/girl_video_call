@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:girl_video_call/view/Constants/ConstantClass.dart';
 import 'package:girl_video_call/view/UiScreen/BestPhotoScreen.dart';
 import 'package:page_transition/page_transition.dart';
-import 'package:sizer/sizer.dart';
+import 'package:responsive_sizer/responsive_sizer.dart';
 
 class HelloScreen extends StatelessWidget {
   const HelloScreen({Key? key}) : super(key: key);

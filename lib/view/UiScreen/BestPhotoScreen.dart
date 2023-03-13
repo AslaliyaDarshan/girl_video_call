@@ -7,7 +7,7 @@ import 'package:girl_video_call/view/Constants/ConstantClass.dart';
 import 'package:girl_video_call/view/UiScreen/InterestScreen.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:page_transition/page_transition.dart';
-import 'package:sizer/sizer.dart';
+import 'package:responsive_sizer/responsive_sizer.dart';
 
 class BestPhotoScreen extends StatefulWidget {
   const BestPhotoScreen({Key? key}) : super(key: key);
@@ -40,13 +40,13 @@ class _BestPhotoScreenState extends State<BestPhotoScreen> {
                   height(4.h),
                   Constants.text(
                     "Add your best photos",
-                    21.sp,
+                    23.sp,
                     Colors.white.withOpacity(0.9),
                   ),
                   height(2.h),
                   Constants.text(
                     "Add your best photos to get a higher matches",
-                    13.sp,
+                    16.5.sp,
                     Colors.white.withOpacity(0.9),
                   ),
                   Container(
@@ -83,7 +83,7 @@ class _BestPhotoScreenState extends State<BestPhotoScreen> {
                         margin: const EdgeInsets.all(7),
                         padding: const EdgeInsets.all(3),
                         decoration: BoxDecoration(
-                          gradient: gradientButton,
+                          gradient: gradientColor,
                           borderRadius: BorderRadius.circular(10),
                         ),
                         child: Container(

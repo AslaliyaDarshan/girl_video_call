@@ -4,7 +4,7 @@ import 'package:girl_video_call/controller/HomeController.dart';
 import 'package:girl_video_call/view/Constants/ConstantClass.dart';
 import 'package:girl_video_call/view/UiScreen/DashBoardScreen/DashBoardScreen.dart';
 import 'package:page_transition/page_transition.dart';
-import 'package:sizer/sizer.dart';
+import 'package:responsive_sizer/responsive_sizer.dart';
 
 class FavouriteCountryGirl extends StatefulWidget {
   const FavouriteCountryGirl({Key? key}) : super(key: key);
@@ -68,7 +68,7 @@ class _FavouriteCountryGirlState extends State<FavouriteCountryGirl> {
                     duration: const Duration(milliseconds: 1300),
                     type: PageTransitionType.fade,
                     alignment: Alignment.center,
-                    childCurrent: FavouriteCountryGirl(),
+                    childCurrent: const FavouriteCountryGirl(),
                     //child: const FavouriteCountryGirl(),
                     child: const DashBoardScreen(),
                     inheritTheme: true,
@@ -111,7 +111,7 @@ class _FavouriteCountryGirlState extends State<FavouriteCountryGirl> {
                   padding: const EdgeInsets.all(4),
                   decoration: BoxDecoration(
                     gradient: controller.select1.value == pIntIndex
-                        ? gradientButton
+                        ? gradientColor
                         : null,
                     borderRadius: BorderRadius.circular(10),
                   ),
@@ -136,7 +136,7 @@ class _FavouriteCountryGirlState extends State<FavouriteCountryGirl> {
                   padding: const EdgeInsets.all(4),
                   decoration: BoxDecoration(
                     gradient: controller.select1.value == pIntIndex1
-                        ? gradientButton
+                        ? gradientColor
                         : null,
                     borderRadius: BorderRadius.circular(10),
                   ),

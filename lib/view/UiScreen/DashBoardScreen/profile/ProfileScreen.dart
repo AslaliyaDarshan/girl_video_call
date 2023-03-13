@@ -2,9 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:girl_video_call/controller/HomeController.dart';
 import 'package:girl_video_call/view/Constants/ConstantClass.dart';
-import 'package:sizer/sizer.dart';
-
-import '../DashBoardScreen.dart';
+import 'package:girl_video_call/view/UiScreen/DashBoardScreen/DashBoardScreen.dart';
+import 'package:responsive_sizer/responsive_sizer.dart';
 
 class ProfileScreen extends StatefulWidget {
   const ProfileScreen({Key? key}) : super(key: key);
@@ -24,9 +23,10 @@ class _ProfileScreenState extends State<ProfileScreen> {
         backgroundColor: backgroundColor,
         body: Stack(
           children: [
-            SizedBox(
+            Container(
               height: MediaQuery.of(context).size.height / 2.5,
-              width: 100.w,
+              width: double.infinity,
+              margin: const EdgeInsets.only(top: 20),
               child: Image.asset(
                 "assets/image/indian.jpg",
                 fit: BoxFit.fill,
@@ -86,7 +86,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                           children: [
                             Constants.text(
                               "Darshan Aslaliya ",
-                              25.sp,
+                              23.sp,
                               Colors.white.withOpacity(0.9),
                             ),
                             const Icon(
@@ -99,7 +99,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                         height(10),
                         Constants.text(
                           "@ DarshanAslaliya",
-                          22,
+                          16.sp,
                           Colors.white.withOpacity(0.9),
                         ),
                         Container(
@@ -115,13 +115,13 @@ class _ProfileScreenState extends State<ProfileScreen> {
                             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                             children: [
                               Constants.text(
-                                "12K \n Followers",
-                                20.sp,
+                                "5K \n Followers",
+                                18.sp,
                                 Colors.white.withOpacity(0.9),
                               ),
                               Constants.text(
-                                "125 \n Following",
-                                20.sp,
+                                "55 \n Following",
+                                18.sp,
                                 Colors.white.withOpacity(0.9),
                               ),
                             ],
@@ -129,7 +129,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                         ),
                         Constants.text(
                           "Media",
-                          25.sp,
+                          23.sp,
                           Colors.white,
                         ),
                         height(15),
@@ -143,14 +143,17 @@ class _ProfileScreenState extends State<ProfileScreen> {
                               return Container(
                                 height: 250,
                                 width: 120,
-                                margin: const EdgeInsets.symmetric(horizontal: 12),
+                                margin:
+                                    const EdgeInsets.symmetric(horizontal: 12),
                                 decoration: BoxDecoration(
                                   borderRadius: BorderRadius.circular(12),
                                   color: Colors.red,
                                 ),
                                 child: ClipRRect(
                                   borderRadius: BorderRadius.circular(12),
-                                  child: Image.asset("${controller.dataList[index].image}",fit: BoxFit.cover),
+                                  child: Image.asset(
+                                      "${controller.dataList[index].image}",
+                                      fit: BoxFit.cover),
                                 ),
                               );
                             },

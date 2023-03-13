@@ -3,7 +3,7 @@ import 'package:girl_video_call/view/Constants/ConstantClass.dart';
 import 'package:girl_video_call/view/UiScreen/HelloScreen.dart';
 import 'package:girl_video_call/view/UiScreen/IntroScreen2.dart';
 import 'package:page_transition/page_transition.dart';
-import 'package:sizer/sizer.dart';
+import 'package:responsive_sizer/responsive_sizer.dart';
 
 class IntroScreen1 extends StatelessWidget {
   const IntroScreen1({Key? key}) : super(key: key);

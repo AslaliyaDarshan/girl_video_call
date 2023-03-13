@@ -2,10 +2,10 @@ import 'dart:io';
 
 import 'package:flutter/material.dart';
 import 'package:girl_video_call/view/Constants/ConstantClass.dart';
-import 'package:girl_video_call/view/UiScreen/DashBoardScreen/Chat/ChatScreen.dart';
+import 'package:girl_video_call/view/UiScreen/DashBoardScreen/Explore/LikeScreen.dart';
 import 'package:girl_video_call/view/UiScreen/DashBoardScreen/Home/HomeScreen.dart';
 import 'package:girl_video_call/view/UiScreen/DashBoardScreen/profile/ProfileScreen.dart';
-import 'package:sizer/sizer.dart';
+import 'package:responsive_sizer/responsive_sizer.dart';
 
 class DashBoardScreen extends StatefulWidget {
   const DashBoardScreen({Key? key}) : super(key: key);
@@ -32,7 +32,7 @@ class _DashBoardScreenState extends State<DashBoardScreen> {
               children: [
                 HomeScreen(),
                 HomeScreen(),
-                const ChatScreen(),
+                LikeScreen(),
                 ProfileScreen(),
               ],
             ),
@@ -42,7 +42,7 @@ class _DashBoardScreenState extends State<DashBoardScreen> {
               alignment: Alignment.center,
               margin: const EdgeInsets.symmetric(horizontal: 15, vertical: 15),
               decoration: BoxDecoration(
-                  gradient: gradientButton,
+                  gradient: gradientColor,
                   borderRadius: BorderRadius.circular(40)),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
@@ -73,12 +73,14 @@ class _DashBoardScreenState extends State<DashBoardScreen> {
                     onTap: () {
                       setState(() {
                         currentIndex = 2;
+                        Constants.snackBar(
+                            "Popular Images", "Click on image show unique");
                       });
                     },
                     child: Icon(
                         currentIndex == 2
-                            ? Icons.chat
-                            : Icons.chat_bubble_outline,
+                            ? Icons.favorite
+                            : Icons.favorite_outline,
                         size: 28.sp),
                   ),
                   InkWell(
@@ -88,9 +90,7 @@ class _DashBoardScreenState extends State<DashBoardScreen> {
                       });
                     },
                     child: Icon(
-                        currentIndex == 3
-                            ? Icons.favorite_outlined
-                            : Icons.person,
+                        currentIndex == 3 ? Icons.person : Icons.person_outline,
                         size: 28.sp),
                   ),
                 ],

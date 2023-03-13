@@ -6,7 +6,7 @@ import 'package:girl_video_call/controller/HomeController.dart';
 import 'package:girl_video_call/view/Constants/ConstantClass.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:image_picker/image_picker.dart';
-import 'package:sizer/sizer.dart';
+import 'package:responsive_sizer/responsive_sizer.dart';
 
 class AddNameScreen extends StatefulWidget {
   const AddNameScreen({Key? key}) : super(key: key);
@@ -51,7 +51,7 @@ class _AddNameScreenState extends State<AddNameScreen> {
                       padding: EdgeInsets.all(4),
                       decoration: BoxDecoration(
                         shape: BoxShape.circle,
-                        gradient: gradientButton,
+                        gradient: gradientColor,
                       ),
                       child: file.path.isEmpty
                           ? Container(
@@ -95,7 +95,7 @@ class _AddNameScreenState extends State<AddNameScreen> {
                 width: 94.w,
                 alignment: Alignment.center,
                 decoration: BoxDecoration(
-                  gradient: gradientButton,
+                  gradient: gradientColor,
                   borderRadius: BorderRadius.circular(30),
                 ),
                 child: Container(
@@ -110,13 +110,13 @@ class _AddNameScreenState extends State<AddNameScreen> {
                     cursorColor: Colors.white,
                     textAlign: TextAlign.center,
                     style: GoogleFonts.poppins(
-                        color: Colors.white, fontSize: 13.sp),
+                        color: Colors.white, fontSize: 17.5.sp),
                     decoration: InputDecoration(
                       enabledBorder: InputBorder.none,
                       focusedBorder: InputBorder.none,
                       hintText: 'Enter NickName',
                       hintStyle: GoogleFonts.poppins(
-                          color: Colors.white, fontSize: 13.sp),
+                          color: Colors.white, fontSize: 17.5.sp),
                       contentPadding: const EdgeInsets.all(15),
                       border: OutlineInputBorder(
                         borderSide:
@@ -137,7 +137,7 @@ class _AddNameScreenState extends State<AddNameScreen> {
                 width: 94.w,
                 alignment: Alignment.center,
                 decoration: BoxDecoration(
-                  gradient: gradientButton,
+                  gradient: gradientColor,
                   borderRadius: BorderRadius.circular(30),
                 ),
                 child: Container(
@@ -152,13 +152,13 @@ class _AddNameScreenState extends State<AddNameScreen> {
                     cursorColor: Colors.white,
                     textAlign: TextAlign.center,
                     style: GoogleFonts.poppins(
-                        color: Colors.white, fontSize: 13.sp),
+                        color: Colors.white, fontSize: 17.5.sp),
                     decoration: InputDecoration(
                       enabledBorder: InputBorder.none,
                       focusedBorder: InputBorder.none,
                       hintText: 'Enter Email (optional)',
                       hintStyle: GoogleFonts.poppins(
-                          color: Colors.white, fontSize: 13.sp),
+                          color: Colors.white, fontSize: 17.5.sp),
                       contentPadding: const EdgeInsets.all(15),
                       border: OutlineInputBorder(
                         borderSide:

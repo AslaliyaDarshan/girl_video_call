@@ -3,7 +3,7 @@ import 'package:get/get.dart';
 import 'package:girl_video_call/view/Constants/ConstantClass.dart';
 import 'package:girl_video_call/view/UiScreen/IntroScreen.dart';
 import 'package:page_transition/page_transition.dart';
-import 'package:sizer/sizer.dart';
+import 'package:responsive_sizer/responsive_sizer.dart';
 
 class PolicyScreen extends StatefulWidget {
   const PolicyScreen({Key? key}) : super(key: key);
@@ -18,13 +18,14 @@ class _PolicyScreenState extends State<PolicyScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(  resizeToAvoidBottomInset: false,
+    return Scaffold(
+      resizeToAvoidBottomInset: false,
       backgroundColor: backgroundColor,
       body: Column(
         children: [
           height(9.h),
           Container(
-            height: MediaQuery.of(context).size.height /1.4,
+            height: MediaQuery.of(context).size.height / 1.4,
             width: 100.w,
             margin: const EdgeInsets.all(8),
             decoration: BoxDecoration(
@@ -56,19 +57,18 @@ class _PolicyScreenState extends State<PolicyScreen> {
                         """   Terms and Condition""",
                         style: TextStyle(
                             color: Colors.white.withOpacity(0.7),
-                            fontSize: 20.sp),
+                            fontSize: 22.sp),
                       ),
                       SelectableText(
                         """      
                           
-       Introduction These Application 
-Terms and Conditions written on this application shall manage your use of this application. These Terms will be applied fully and affect tp your use of this Application. By using this Application, you agreed to accept all terms and conditions written in here. You must not use this Application if you disagree with any of these Application Standard Terms and Conditions.
+Introduction These Application Terms and Conditions written on this application shall manage your use of this application. These Terms will be applied fully and affect tp your use of this Application. By using this Application, you agreed to accept all terms and conditions written in here. You must not use this Application if you disagree with any of these Application Standard Terms and Conditions.
  
- Minors or people below 18 years old not allowed to use this Application.
+Minors or people below 18 years old not allowed to use this Application.
  """,
                         style: TextStyle(
                             color: Colors.white.withOpacity(0.7),
-                            fontSize: 15.sp),
+                            fontSize: 18.sp),
                       ),
                       CheckboxListTile(
                         title: Text(
@@ -126,7 +126,7 @@ Terms and Conditions written on this application shall manage your use of this a
               ],
             ),
           ),
-          height(1.5.h),
+          height(2.h),
           agree
               ? Constants.confirmButton(() {
                   Navigator.push(

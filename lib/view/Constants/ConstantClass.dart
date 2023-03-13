@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:responsive_sizer/responsive_sizer.dart';
 import 'package:simple_gradient_text/simple_gradient_text.dart';
-import 'package:sizer/sizer.dart';
 
 Color backgroundColor = const Color(0xFF1F0417);
 Color policyBackgroundColor = const Color(0xFF45303f);
-LinearGradient gradientButton = const LinearGradient(
+LinearGradient gradientColor = const LinearGradient(
   begin: Alignment.centerLeft,
   end: Alignment.centerRight,
   colors: [
@@ -75,7 +75,7 @@ class Constants {
         width: pDblWidth ?? 45.w,
         alignment: Alignment.center,
         decoration: BoxDecoration(
-          gradient: gradientButton,
+          gradient: gradientColor,
           borderRadius: BorderRadius.circular(30),
         ),
         child: Container(
@@ -102,12 +102,12 @@ class Constants {
     return GestureDetector(
       onTap: onTap,
       child: Container(
-        margin: const EdgeInsets.symmetric(horizontal: 15),
-        alignment: Alignment.center,
         height: 60,
         width: double.infinity,
+        margin: const EdgeInsets.symmetric(horizontal: 15),
+        alignment: Alignment.center,
         decoration: BoxDecoration(
-          gradient: gradientButton,
+          gradient: gradientColor,
           borderRadius: BorderRadius.circular(30),
         ),
         child: Constants.text(
@@ -128,7 +128,7 @@ class Constants {
         height: 7.5.h,
         width: 45.w,
         decoration: BoxDecoration(
-          gradient: gradientButton,
+          gradient: gradientColor,
           borderRadius: BorderRadius.circular(30),
         ),
         child: Constants.text(

@@ -40,11 +40,13 @@ dependencies:
   simple_gradient_text: ^1.2.4
   google_fonts: ^2.0.0
   image_picker: ^0.8.6+3
-  sizer: ^2.0.15
+  responsive_sizer: ^3.1.1
   get: ^4.6.5
   video_player: ^2.6.0
   face_camera: ^0.0.6
-
+  lightbox: ^0.1.0
+  flutter_swiper_view: ^1.1.8
+  lottie: ^2.2.0
 
 dev_dependencies:
   flutter_test:
@@ -76,6 +78,7 @@ flutter:
     - assets/image/
     - assets/image/videoImage/
     - assets/image/video/
+    - assets/lottie/
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware

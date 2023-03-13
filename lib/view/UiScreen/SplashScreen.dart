@@ -5,7 +5,7 @@ import 'package:girl_video_call/view/Constants/ConstantClass.dart';
 import 'package:girl_video_call/view/UiScreen/FavouriteCountryGirl.dart';
 import 'package:girl_video_call/view/UiScreen/PolicyScreen.dart';
 import 'package:page_transition/page_transition.dart';
-import 'package:sizer/sizer.dart';
+import 'package:responsive_sizer/responsive_sizer.dart';
 
 class SplashScreen extends StatelessWidget {
   const SplashScreen({Key? key}) : super(key: key);
@@ -34,11 +34,11 @@ class SplashScreen extends StatelessWidget {
                 children: [
                   Image.asset("assets/image/lips.png",
                       height: 18.h, width: 18.h, fit: BoxFit.contain),
-                  Constants.gradientText("Flirt", 60),
+                  Constants.gradientText("Flirt", 30.sp),
                 ],
               ),
               height(3.h),
-              Constants.text("Welcome", 30.sp, Colors.white),
+              Constants.text("Welcome", 27.sp, Colors.white),
               height(46.h),
               InkWell(
                 borderRadius: BorderRadius.circular(30),
@@ -50,17 +50,17 @@ class SplashScreen extends StatelessWidget {
                         type: PageTransitionType.rotate,
                         alignment: Alignment.center,
                         childCurrent: const SplashScreen(),
-                         child: const FavouriteCountryGirl(),
-                        //child: const PolicyScreen(),
+                        //child: const FavouriteCountryGirl(),
+                        child: const PolicyScreen(),
                         inheritTheme: true,
                         ctx: context),
                   );
                 },
                 child: Container(
-                  margin: const EdgeInsets.symmetric(horizontal: 40),
-                  alignment: Alignment.center,
                   height: 60,
                   width: double.infinity,
+                  margin: const EdgeInsets.symmetric(horizontal: 40),
+                  alignment: Alignment.center,
                   decoration: BoxDecoration(
                     boxShadow: const [
                       BoxShadow(
@@ -69,7 +69,7 @@ class SplashScreen extends StatelessWidget {
                           blurRadius: 15,
                           spreadRadius: 1),
                     ],
-                    gradient: gradientButton,
+                    gradient: gradientColor,
                     borderRadius: BorderRadius.circular(30),
                   ),
                   child: Constants.text("Join Now", 21.sp, Colors.white),
